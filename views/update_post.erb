@@ -4,7 +4,7 @@
 <h2>Update a post</h2>
   <div class="card" id="posting">
     <div class="card-body">
-      <form action="/update_post/" method="post">
+      <form action="/update_post/<%=@post.id%>" method="post">
       <h4 class="card-title"><input type="text" name="subject" placeholder="Subject"></h4>
 
       <textarea name="content" id="contentbox" cols="60" rows="8"></textarea>

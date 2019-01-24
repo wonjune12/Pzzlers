@@ -7,6 +7,7 @@
       <a href='/signin'><button type="button" class="btn btn-secondary btn-lg">Sign in</button> </a>
 <%  else%>
       <%= 'Hello ' + User.find_by(id: session[:user_id]).username.split("").shuffle.join%><br/> <br/> <br/>
+      <a href='/signout'><button type="button" class="btn btn-lg btn-danger" >Sign Out</button> </a>
 <%  end%>
 </h1>
 </center>

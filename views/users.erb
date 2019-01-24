@@ -1,22 +1,23 @@
-
+<% if (session[:user_id] == @user.id)%>
 Username : <%= @user.username%><br/>
 Name : <%= @user.name%> <br/>
 E-mail : <%= @user.email%> <br/>
 Birthday : <%= @user.dob%> <br/>
-
+<%end%>
 number of posts : <%=@user.post_counter %>
 
 <% @posts.each do |post|%>
   <div class="card" id="posting">
-    <div class="card-body">
+    <div class="card-body" id="postTexts">
       <h1 class="card-title"><%= post.subject%></h1>
       <div class="card-text">  <%= post.content%> 
+      <div id="postTimeandButtons">
       <%if post.updated_timestamp == nil%>
         <%= post.created_timestamp%>
       <%else%>
         <%= post.updated_timestamp%>
       <%end%>
-      </div>
+      
         <% if (session[:user_id]==post.user_id)%>
         <form action="/update_post/<%=post.id%>" method="get">
           <input class="alert alert-dark" name="subject"type="submit" value="Edit this post">
@@ -25,6 +26,8 @@ number of posts : <%=@user.post_counter %>
           <input class="alert alert-danger" type="submit" value="Delete This Post">
         </form>
         <%end%>
+        </div>
+        </div>
     </div>
 </div>
 <%end%>

@@ -121,7 +121,7 @@ get '/update_post/:post_id' do
   if session[:user_id]  == @user.id
     erb (:update_post)
   else
-    redirect '/'
+    redirect '/posts'
   end
 
 end

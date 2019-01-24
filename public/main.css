@@ -28,7 +28,6 @@ body::after {
 .card#posting{
   margin-bottom : 20px;
   border: 2px;
-  border-radius : 2px #000000;
   box-shadow: 0 10px 6px -6px #777;
   width : 80%;
   height : 25%;
@@ -40,4 +39,13 @@ body::after {
 
 #navlink{
   margin : 5px 10px 5px 10px;
+}
+
+#postTexts{
+  margin-left : 25px;
+  text-align: left;
+}
+
+#postTimeandButtons{
+  text-align:right;
 }
