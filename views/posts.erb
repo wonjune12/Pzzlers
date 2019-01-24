@@ -1,0 +1,37 @@
+
+<center>
+
+
+
+<% @posts.each do |post|%>
+  <div class="card" id="posting">
+    <div class="card-body">
+      <h1 class="card-title"><%= post.subject%></h1>
+      <div class="card-text">  <%= post.content%> 
+      by
+      <%= post.username%>
+      <%if post.updated_timestamp == nil%>
+        <%= post.created_timestamp%>
+      <%else%>
+        <%= post.updated_timestamp%>
+      <%end%>      
+      </div>
+
+        <% if (session[:user_id]==post.user_id)%>
+        <form action="/update_post/<%=post.id%>" method="get">
+          <input class="alert alert-dark" type="submit" value="Edit this post">
+        </form>
+        <form action="/delete_post/<%=post.id%>" method="get">
+          <input class="alert alert-danger" type="submit" value="Delete This Post">
+        </form>
+        <% end%>
+    </div>
+  </div>
+
+
+
+
+
+<%end%>
+
+</center>

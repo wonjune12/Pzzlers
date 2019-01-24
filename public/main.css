@@ -1,0 +1,43 @@
+header{
+  font-family: 'Thasadith', sans-serif;
+  font-size: 2rem;
+}
+
+body{
+
+  font-family: 'Thasadith', sans-serif;
+  font-size: 1.5rem;
+  height : 70rem;
+}
+
+body::after {
+  content: "";
+  background: url("images/rubik_cube_PNG31.png");
+  background-repeat: no-repeat;
+  position:absolute;
+  background-position: 50% 50%;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  z-index: -1;   
+}
+
+.card#posting{
+  margin-bottom : 20px;
+  border: 2px;
+  border-radius : 2px #000000;
+  box-shadow: 0 10px 6px -6px #777;
+  width : 80%;
+  height : 25%;
+}
+
+#navbar{
+  margin : 20px 80px 50px 80px;
+}
+
+#navlink{
+  margin : 5px 10px 5px 10px;
+}

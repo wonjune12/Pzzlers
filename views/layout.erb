@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  
+  <title> Welcome Puzzlers</title>
+</head>
+<body>
+<header>
+  <nav id="navbar">
+  <div class="row">
+  <div class="col-auto mr-auto"><a href="/"> H o m e</a></div>
+  <div class="col-auto"><a href="/posts" id="navlink"> A l l P o s t s </a>
+    <% if session[:user_id] %>
+      <a href="/create_post" id="navlink"> N e w P o s t </a>
+      <a href="/users\  <%= session[:user_id] %>" id="navlink"> U s e r s</a>
+      <a href="/signout" id="navlink"> L o g o u t</a>
+    <% else %>
+      <a href="/signup" id="navlink">S i g n u p</a>
+      <a href="/signin" id="navlink">S i g n i n</a>
+    <% end %></div>
+</div>
+
+    
+  </nav>
+  </header>
+  <div class='container-fluid' id="body">
+  <div id="backgroundimg"></div>
+  <%=yield%>
+  </div>
+</body>
+</html>

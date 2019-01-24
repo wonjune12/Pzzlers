@@ -1,0 +1,12 @@
+<center>
+<h1>
+<% welcome_message = 'Puzzlers!'%>
+<%  if session[:user_id].nil?%>
+      <%= 'Welcome ' + welcome_message.split("").shuffle.join %><br/> <br/> <br/><br/> <br/> <br/><br/> <br/> <br/>
+      <a href='/signup'><button type="button" class="btn btn-lg btn-primary" >Sign up</button> </a>
+      <a href='/signin'><button type="button" class="btn btn-secondary btn-lg">Sign in</button> </a>
+<%  else%>
+      <%= 'Hello ' + User.find_by(id: session[:user_id]).username.split("").shuffle.join%><br/> <br/> <br/>
+<%  end%>
+</h1>
+</center>
