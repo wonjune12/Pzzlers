@@ -6,7 +6,8 @@ set :database, 'postgresql:blogs'
 ActiveRecord::Base.establish_connection(
   adapter: 'postgresql',
   host: 'localhost',
-  database: 'blogs'
+  database: 'blogs',
+  port: '5432'
 )
 
 class User < ActiveRecord::Base
