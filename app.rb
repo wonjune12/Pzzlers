@@ -5,6 +5,17 @@ require_relative 'models'
 
 enable :sessions
 
+configure :development do
+  set :database, "postgresql:blogs"
+end
+
+configure :production do
+  # this environment variable is auto generated/set by heroku
+  #   check Settings > Reveal Config Vars on your heroku app admin panel
+  set :database, ENV["DATABASE_URL"]
+end
+
+
 get '/' do
   erb :landing_page
   
